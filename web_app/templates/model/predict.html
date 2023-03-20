@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Suggested Clips{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  {% for score in scores %}
+    <div class="video">
+      <iframe
+        src="https://player.twitch.tv/?video=v{{ video_id }}&parent=127.0.0.1&autoplay=false&time={{ score['start'] }}"
+        height="486"
+        width="864"
+        allowfullscreen>
+      </iframe>
+    </div>
+  {% endfor %}
+{% endblock %}
